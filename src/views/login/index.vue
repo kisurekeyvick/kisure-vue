@@ -15,7 +15,8 @@
             <a-row :gutter="24">
                 <a-col :span="24">
                     <a-form-item>
-                        <a-input type='text' placeholder="请输入账号">
+                        <a-input type='text' placeholder="请输入账号"
+                            v-decorator="decorator['userName']">
                             <a-icon
                                 slot="prefix"
                                 type="user"
@@ -26,7 +27,8 @@
                 </a-col>
                 <a-col :span="24">
                     <a-form-item>
-                        <a-input type='password' placeholder="请输入密码">
+                        <a-input type='password' placeholder="请输入密码"
+                            v-decorator="decorator['password']">
                             <a-icon
                                 slot="prefix"
                                 type="lock"
@@ -67,11 +69,12 @@
     </div>
 </template>
 <script>
-import { layoutConfig } from './index.config';
+import { layoutConfig, decorator } from './index.config';
 export default {
     data() {
         return {
             layoutConfig,
+            decorator,
             form: {}
         };
     },
